@@ -37,7 +37,6 @@ task_silver = BashOperator(
         dag=dag,
         task_id='load_silver',
         bash_command="python $AIRFLOW_HOME/dags/sparkSilver.py --configpath $AIRFLOW_HOME/dags/aws.cfg",
-       # bash_command="python ./sparkSilver.py",
     )
 
 start_operator >> task_silver >> end_operator
